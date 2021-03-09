@@ -3,12 +3,118 @@
   padding: 0px;
 }
 
-.viga{
-  font-family: 'Viga', sans-serif;
-}
-.libre{
-  font-family: 'Libre Caslon Display', serif;
-}
-.playfair{
+/* font */
+
+body{
   font-family: 'Playfair Display SC', serif;
+  overflow-x: hidden;
+}
+
+nav{
+  display: flex;
+  background: #212523;
+  justify-content: space-around;
+  height: 60px;
+  align-items: center;
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav a{
+  color: #DCDCDC;
+  text-decoration: none;
+}
+
+nav a:hover{
+  color: white;
+  transition: color 0.5s;
+}
+
+nav h4{
+  color: #DCDCDC;
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+
+.menu-toggle{
+  position: relative;
+}
+
+.menu-toggle input{
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -1px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu-toggle span{
+  display: block;
+  width: 28px;
+  border-bottom: 3px solid white;
+  margin: 6px;
+  transition: 1s;
+}
+
+.menu-toggle ~ span:nth-child(2){
+  transform-origin: 0 0;
+}
+
+.menu-toggle ~ span:nth-child(4){
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked{
+  left: 0px;
+  top: 1px;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+  transform: rotate(45deg);
+  margin-top: 5px;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+  transform: rotate(-45deg);
+  margin-top: -18px;
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+  transform: scale(0);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px){
+  nav ul{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 576px){
+  nav ul{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #212523;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: 1s;
+  }
+  nav ul.slide{
+    transform: translateX(0);
+  }
 }
