@@ -1,0 +1,14 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.viga{
+  font-family: 'Viga', sans-serif;
+}
+.libre{
+  font-family: 'Libre Caslon Display', serif;
+}
+.playfair{
+  font-family: 'Playfair Display SC', serif;
+}
